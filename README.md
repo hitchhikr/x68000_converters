@@ -52,5 +52,5 @@ These interactive tools are quite rudimentary, they basically look like this (on
 With the tiles picture with all the palettes on the left and the user selected tiles on the right.
 
 Tiles can be saved as PNG pictures (either all of them or just the selected ones) 
-or indexes files can be created with the selected ones to be later reloaded in the tools.
+also indexes files can be created with the selected ones to be later reloaded in the tools.
 
