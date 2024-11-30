@@ -594,13 +594,23 @@ class MyFrame(wx.Frame):
         pos_in_pic = event.Position
         self.window.Scroll(0, pos_in_pic)
 
+class UsageFrame(wx.Frame):
+    def __init__(self):
+        super().__init__(parent = None),
+        msg = wx.GenericMessageDialog(self, "x68k_16x16_tiles_extractor <png picture file> <tiles file> <palette file> <number of tiles> [offset in pic file] [offset in pal file]" , "Usage", wx.OK)
+        ret = msg.ShowModal()
+
 def main():
     global png_pic_name
     global tiles_number
 
     print('x68k_16x16_tiles_extractor by Franck "hitchhikr" Charlet.')
     if len(sys.argv) < 5:
-        print("Usage: x68k_16x16_tiles_extractor <png picture file> <tiles file> <palette file> <number of tiles> [offset in pic file] [offset in pal file]")
+        if(sys.executable.endswith("pythonw.exe")):
+            app = wx.App()
+            UsageFrame()
+        else:
+            print("Usage: x68k_16x16_tiles_extractor <png picture file> <tiles file> <palette file> <number of tiles> [offset in pic file] [offset in pal file]")
         return
     if len(sys.argv) < 6:
         offset_pic = 0
